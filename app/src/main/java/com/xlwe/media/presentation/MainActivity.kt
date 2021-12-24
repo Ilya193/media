@@ -1,4 +1,4 @@
-package com.xlwe.media
+package com.xlwe.media.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
