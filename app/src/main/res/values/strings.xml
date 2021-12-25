@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">media</string>
+    <string name="name">Имя</string>
+    <string name="email">Емайл</string>
+    <string name="password">Пароль</string>
+    <string name="signup">SignUp</string>
+    <string name="signIn">Войти</string>
+    <string name="sign_in">Sign in</string>
 </resources>

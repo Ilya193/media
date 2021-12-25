@@ -1,12 +1,12 @@
-package com.xlwe.media.presentation
+package com.xlwe.media.presentation.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.xlwe.media.databinding.ActivityMainBinding
+import com.xlwe.media.databinding.ActivityCreateAccountBinding
 
-class MainActivity : AppCompatActivity() {
+class CreateAccountActivity : AppCompatActivity() {
     private val binding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
+        ActivityCreateAccountBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
