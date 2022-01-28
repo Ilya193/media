@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_mobile"
+    app:startDestination="@id/communicationFragment">
+    <fragment
+        android:id="@+id/communicationFragment"
+        android:name="com.xlwe.media.presentation.fragments.CommunicationFragment"
+        android:label="fragment_communication"
+        tools:layout="@layout/fragment_communication" >
+        <action
+            android:id="@+id/action_communicationFragment_to_sendFragment"
+            app:destination="@id/sendFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.xlwe.media.presentation.fragments.PostsFragment"
+        android:label="fragment_posts"
+        tools:layout="@layout/fragment_posts" />
+    <fragment
+        android:id="@+id/sendFragment"
+        android:name="com.xlwe.media.presentation.fragments.SendFragment"
+        android:label="fragment_send"
+        tools:layout="@layout/fragment_send" >
+        <argument
+            android:name="user"
+            app:argType="com.xlwe.media.domain.model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.xlwe.media.presentation.fragments.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" />
+</navigation>

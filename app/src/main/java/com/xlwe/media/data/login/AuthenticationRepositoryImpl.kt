@@ -3,9 +3,9 @@ package com.xlwe.media.data.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.xlwe.media.data.AppDatabase
-import com.xlwe.media.domain.login.LoginRepository
+import com.xlwe.media.domain.login.AuthenticationRepository
 
-class AuthenticationRepositoryImpl: LoginRepository {
+class AuthenticationRepositoryImpl: AuthenticationRepository {
     private val auth = AppDatabase.auth
     private val ok = MutableLiveData<Any>()
 

@@ -37,16 +37,13 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginViewModel.okLogIn.observe(this) {
-            Log.d("LoginActivity", "$it")
 
             if (it is String) {
                 Toast.makeText(this, "$it", Toast.LENGTH_LONG).show()
             }
 
             if (it is Boolean) {
-                //TODO
-                /*startActivity(Intent(this, MainActivity::class.java))
-                finish()*/
+                loginViewModel.registered()
             }
         }
     }
@@ -57,6 +54,9 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.password.text.toString()
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 loginViewModel.logInSystem(email, password)
+            }
+            else {
+                Toast.makeText(this, "Заполните поля", Toast.LENGTH_SHORT).show()
             }
         }
 

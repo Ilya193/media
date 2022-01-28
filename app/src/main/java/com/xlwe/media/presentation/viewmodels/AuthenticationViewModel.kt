@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xlwe.media.domain.login.LogInSystemUseCase
 import com.xlwe.media.domain.login.RegisteredUseCase
-import com.xlwe.media.domain.login.SuccessLogInSystem
+import com.xlwe.media.domain.login.SuccessLogInSystemUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,14 +14,14 @@ import javax.inject.Inject
 @HiltViewModel
 class AuthenticationViewModel @Inject constructor(
     private val registeredUseCase: RegisteredUseCase,
-    private val logInSystem: LogInSystemUseCase,
-    private val successLogInSystem: SuccessLogInSystem,
+    private val logInSystemUseCase: LogInSystemUseCase,
+    private val successLogInSystemUseCase: SuccessLogInSystemUseCase,
 ): ViewModel() {
     private val _isRegistered = MutableLiveData<Boolean>()
     val isRegistered: LiveData<Boolean>
         get() = _isRegistered
 
-    val okLogIn = successLogInSystem.okLogInSystem()
+    val okLogIn = successLogInSystemUseCase.okLogInSystem()
 
     fun registered() {
         viewModelScope.launch {
@@ -31,7 +31,7 @@ class AuthenticationViewModel @Inject constructor(
 
     fun logInSystem(email: String, password: String) {
         viewModelScope.launch {
-            logInSystem.logInSystem(email, password)
+            logInSystemUseCase.logInSystem(email, password)
         }
     }
 }
